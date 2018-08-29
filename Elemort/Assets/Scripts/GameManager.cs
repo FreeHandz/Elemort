@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+	public Player player;
+	public HandDisplay playerHand;
 
-	private static GameManager instance;
+	public static GameManager instance;
 
 	void Awake()
 	{
@@ -15,5 +17,15 @@ public class GameManager : MonoBehaviour {
 
 		// scenek közötti váltáskor ne pusztuljon el ez az object, mert ez lesz a felelős a globális dolgokért
 		DontDestroyOnLoad (gameObject);
+	}
+
+	void Start()
+	{
+		InitGame ();
+	}
+
+	public void InitGame()
+	{
+		playerHand.RenderHand ();
 	}
 }

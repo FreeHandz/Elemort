@@ -8,7 +8,7 @@ using UnityEngine.UI;
 // ezáltal lesz létrehozható egy ilyen object az editorból
 // jobb klikk -> new card, és kész is
 // gecijó
-[CreateAssetMenu(fileName = "New Card", menuName = "Card")]
+[CreateAssetMenu(fileName = "New Card", menuName = "Cards")]
 public class Card: ScriptableObject {
 
 	public enum ElementType {
@@ -21,7 +21,7 @@ public class Card: ScriptableObject {
 	public new string name;
 	public string description;
 
-	public Image artWork;
+	public Sprite artWork;
 	public int manaCost;
 
 	public ElementType elementType;

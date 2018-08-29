@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	public List<Card> deck = new List<Card>();
+	public List<Card> hand = new List<Card>();
 
 	// Use this for initialization
 	void Start () {
