@@ -59,4 +59,23 @@ public class Player : MonoBehaviour
             //TODO: init endgame
         }
     }
+
+	public void Draw()
+	{
+		while (hand.Count < 5) {
+			if (deck.Count == 0) {
+				Debug.Log ("no more cards in deck!");
+				break;
+			}
+
+
+			int randomIndex = ((int)UnityEngine.Random.Range (0, hand.Count - 1));
+			Card drawedCard = deck [randomIndex];
+
+			deck.Remove (drawedCard);
+			hand.Add (drawedCard);
+
+			GameManager.instance.playerHand.RenderHand ();
+		}
+	}
 }

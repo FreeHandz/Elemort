@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
 
+	public List<Card> allCards = new List<Card> ();
+
 	void Awake()
 	{
 		if (instance == null)

@@ -738,6 +738,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
+        type: 2}
+      propertyPath: deck.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
+        type: 2}
+      propertyPath: hand.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4788153935334574, guid: 123959996faa0b645aceb66cf27bc847, type: 2}
       propertyPath: m_LocalPosition.x
       value: -9.31
@@ -770,21 +780,48 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114417829611057730, guid: 123959996faa0b645aceb66cf27bc847,
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
         type: 2}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 50501064057567868, guid: 123959996faa0b645aceb66cf27bc847,
+      propertyPath: deck.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 771e598654115ed41984ea3ff6bd92d8,
         type: 2}
-      propertyPath: m_GravityScale
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114417829611057730, guid: 123959996faa0b645aceb66cf27bc847,
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
         type: 2}
-      propertyPath: jumpHeight
-      value: 7
-      objectReference: {fileID: 0}
+      propertyPath: deck.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ab2417ed752228448f932a29ca85d3a,
+        type: 2}
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
+        type: 2}
+      propertyPath: deck.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3c6b67ac7e53216439c502093930aa31,
+        type: 2}
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
+        type: 2}
+      propertyPath: deck.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ce89c5c74213ac4fb4e576c9d056e50,
+        type: 2}
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
+        type: 2}
+      propertyPath: deck.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 07fde9f141429bd4e82a216b5cfa74f2,
+        type: 2}
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
+        type: 2}
+      propertyPath: hand.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ce89c5c74213ac4fb4e576c9d056e50,
+        type: 2}
+    - target: {fileID: 114564644025899430, guid: 123959996faa0b645aceb66cf27bc847,
+        type: 2}
+      propertyPath: hand.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 07fde9f141429bd4e82a216b5cfa74f2,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123959996faa0b645aceb66cf27bc847, type: 2}
   m_IsPrefabAsset: 0
