@@ -22,7 +22,7 @@ public class Card: ScriptableObject {
 	public string description;
 
 	public Sprite artWork;
-	public int manaCost;
+	public int cost;
 
 	public ElementType elementType;
 	// ez egy nagy nagy enum
