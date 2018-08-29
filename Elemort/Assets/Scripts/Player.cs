@@ -68,12 +68,11 @@ public class Player : MonoBehaviour
 				break;
 			}
 
-
-			int randomIndex = ((int)UnityEngine.Random.Range (0, hand.Count - 1));
+			int randomIndex = ((int)UnityEngine.Random.Range (0, deck.Count - 1));
 			Card drawedCard = deck [randomIndex];
 
-			deck.Remove (drawedCard);
 			hand.Add (drawedCard);
+			deck.Remove (drawedCard);
 
 			GameManager.instance.playerHand.RenderHand ();
 		}
