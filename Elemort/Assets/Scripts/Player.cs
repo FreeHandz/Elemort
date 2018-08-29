@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public void startLightWeight(int duration)
     {
-        lightWeightUntil.AddSeconds(duration);
+		lightWeightUntil = DateTime.Now.AddSeconds(duration);
     }
 
     public void Update()
@@ -36,11 +36,12 @@ public class Player : MonoBehaviour
 
         Rigidbody2D playersRigidbody = this.GetComponent<Rigidbody2D>();
 
-        if (lightWeightUntil > DateTime.Now && !Mathf.Approximately(playersRigidbody.mass,lightWeightMass))
+        if (lightWeightUntil > DateTime.Now)
         {
+			
             playersRigidbody.mass = lightWeightMass;
         }
-        else if(!Mathf.Approximately(playersRigidbody.mass,defaultMass))
+        else
         {
             playersRigidbody.mass = defaultMass;
         }
@@ -58,4 +59,22 @@ public class Player : MonoBehaviour
             //TODO: init endgame
         }
     }
+
+	public void Draw()
+	{
+		while (hand.Count < 5) {
+			if (deck.Count == 0) {
+				Debug.Log ("no more cards in deck!");
+				break;
+			}
+
+			int randomIndex = ((int)UnityEngine.Random.Range (0, deck.Count - 1));
+			Card drawedCard = deck [randomIndex];
+
+			hand.Add (drawedCard);
+			deck.Remove (drawedCard);
+
+			GameManager.instance.playerHand.RenderHand ();
+		}
+	}
 }

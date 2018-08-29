@@ -5,8 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 	public Player player;
 	public HandDisplay playerHand;
+	public PlayerAction playerAction;
 
 	public static GameManager instance;
+
+	public List<Card> allCards = new List<Card> ();
 
 	void Awake()
 	{
