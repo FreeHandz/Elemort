@@ -1,18 +1,41 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    public bool useCard(CardType type)
+    public Player player;
+
+    public bool useCard(Card card)
     {
-        switch (type)
+        if (player.mana < card.manaCost)
+        {
+            return false;
+        }
+
+        player.mana -= card.manaCost;
+
+        switch (card.type)
         {
             case CardType.LightWeight:
-                return true;
+                player.startLightWeight(card.duration);
+                break;
+            case CardType.ForcePush:
+                break;
+            case CardType.FireBall:
+                break;
+            case CardType.SafeMode:
+                break;
+            case CardType.Draw:
+                break;
+            case CardType.Freeze:
+                break;
             default:
                 return false;
         }
+
+        return true;
     }
 }
 

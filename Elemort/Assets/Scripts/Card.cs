@@ -26,5 +26,7 @@ public class Card: ScriptableObject {
 
 	public ElementType elementType;
 	// ez egy nagy nagy enum
-	public string type;
+	public CardType type;
+
+    public int duration;
 }
