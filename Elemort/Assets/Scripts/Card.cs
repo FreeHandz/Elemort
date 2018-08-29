@@ -1,16 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Card : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+
+// ezáltal lesz létrehozható egy ilyen object az editorból
+// jobb klikk -> new card, és kész is
+// gecijó
+[CreateAssetMenu(fileName = "New Card", menuName = "Card")]
+public class Card: ScriptableObject {
+
+	public enum ElementType {
+		fire = 1,
+		water = 2,
+		earth = 3,
+		wind = 4
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+	public new string name;
+	public string description;
+
+	public Image artWork;
+	public int manaCost;
+
+	public ElementType elementType;
+	// ez egy nagy nagy enum
+	public string type;
 }
