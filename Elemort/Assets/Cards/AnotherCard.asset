@@ -14,6 +14,7 @@ MonoBehaviour:
   name: Another card
   description: desc
   artWork: {fileID: 21300000, guid: a2c24af34aa4c174eaa81be659a53461, type: 3}
-  manaCost: 30
+  cost: 0
   elementType: 1
-  type: asd
+  type: 1
+  duration: 10

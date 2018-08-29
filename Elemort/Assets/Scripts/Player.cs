@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public void startLightWeight(int duration)
     {
-        lightWeightUntil.AddSeconds(duration);
+		lightWeightUntil = DateTime.Now.AddSeconds(duration);
     }
 
     public void Update()
@@ -34,13 +34,14 @@ public class Player : MonoBehaviour
             //TODO: Init endgame
         }
 
-        Rigidbody playersRigidbody = this.GetComponent<Rigidbody>();
+        Rigidbody2D playersRigidbody = this.GetComponent<Rigidbody2D>();
 
-        if (lightWeightUntil > DateTime.Now && !Mathf.Approximately(playersRigidbody.mass,lightWeightMass))
+        if (lightWeightUntil > DateTime.Now)
         {
+			
             playersRigidbody.mass = lightWeightMass;
         }
-        else if(!Mathf.Approximately(playersRigidbody.mass,defaultMass))
+        else
         {
             playersRigidbody.mass = defaultMass;
         }
