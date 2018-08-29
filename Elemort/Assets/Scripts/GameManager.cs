@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
 
 	public void InitGame()
 	{
+		player.Draw ();
 		playerHand.RenderHand ();
 	}
 }
