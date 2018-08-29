@@ -16,11 +16,11 @@ public class HandDisplay : MonoBehaviour {
 				if (i < GameManager.instance.player.hand.Count) {
 					var card = GameObject.Instantiate (cardDisplayPrefab, handSlots[i].transform);
 
+					cardDisplayPrefab.transform.localPosition = Vector3.zero;
 					cardDisplayPrefab.card = GameManager.instance.player.hand [i];
 
 					cardDisplayPrefab.RenderCard ();
 
-					cardDisplayPrefab.transform.localPosition = handSlots [i].transform.position;
 				}
 			}
 		}
