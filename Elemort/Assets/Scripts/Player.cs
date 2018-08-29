@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
             //TODO: Init endgame
         }
 
-        Rigidbody playersRigidbody = this.GetComponent<Rigidbody>();
+        Rigidbody2D playersRigidbody = this.GetComponent<Rigidbody2D>();
 
         if (lightWeightUntil > DateTime.Now && !Mathf.Approximately(playersRigidbody.mass,lightWeightMass))
         {
