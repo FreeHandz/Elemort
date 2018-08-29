@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+	public Player player;
 
-	private static GameManager instance;
+	public static GameManager instance;
 
 	void Awake()
 	{

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 // ezáltal lesz létrehozható egy ilyen object az editorból
 // jobb klikk -> new card, és kész is
 // gecijó
-[CreateAssetMenu(fileName = "New Card", menuName = "Card")]
+[CreateAssetMenu(fileName = "New Card", menuName = "Cards")]
 public class Card: ScriptableObject {
 
 	public enum ElementType {
