@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : ObjectMovement {
 
-    void Update() {
-        var z = Input.GetAxis("Horizontal") * 15f;
-        transform.Translate(z, 0, 0);
+    private void Update() {
+        int x, y = 0;
+        x = (int) Input.GetAxisRaw("Horizontal");
+        y = (int) Input.GetAxisRaw("Vertical");
+        AttemptMove<Block>(x, y);
+        // transform.Translate(x, y, 0);
     }
+
 }
