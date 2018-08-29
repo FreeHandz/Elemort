@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
 	public List<Card> deck = new List<Card>();
 	public List<Card> hand = new List<Card>();
+
+    public GameObject fireBallPrefab;
     
     private int health = defaultHealth;
     public int Health
@@ -58,6 +60,11 @@ public class Player : MonoBehaviour
         {
             //TODO: init endgame
         }
+    }
+
+    public void fireFireball()
+    {
+        GameObject.Instantiate(fireBallPrefab, this.gameObject.transform);
     }
 
 	public void Draw()

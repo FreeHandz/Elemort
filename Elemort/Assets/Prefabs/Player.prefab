@@ -262,3 +262,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 771e598654115ed41984ea3ff6bd92d8, type: 2}
   - {fileID: 11400000, guid: 5ab2417ed752228448f932a29ca85d3a, type: 2}
   - {fileID: 11400000, guid: 1ce89c5c74213ac4fb4e576c9d056e50, type: 2}
+  fireBallPrefab: {fileID: 1006206000993220, guid: f54dfc615897f3c4ebb052b40913a9b2,
+    type: 2}
