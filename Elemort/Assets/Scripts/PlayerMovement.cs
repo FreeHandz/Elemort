@@ -8,30 +8,30 @@ public class PlayerMovement : MonoBehaviour {
 
     public float jumpHeight;
 
-    private float distanceFromGround;
+	private bool isInAir;
 
     void Start() {
-        distanceFromGround = GetComponent<BoxCollider2D>().bounds.extents.y;
+		isInAir = false;
     }
 
     void Update() {
         var x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
         var jumpedButtonPressed = Input.GetButton("Jump");
-        if (jumpedButtonPressed && IsPlayerOnGround())
+		if (jumpedButtonPressed && !isInAir)
             Jump();
 
         transform.Translate(x, 0, 0);
     }
 
     private void Jump() {
-        Debug.Log("jumped");
-        var asd = GetComponent<Rigidbody2D>();
-        asd.velocity = new Vector2(0, jumpHeight);
+        var body = GetComponent<Rigidbody2D>();
+        body.velocity = new Vector2(0, jumpHeight);
+		isInAir = true;
     }
 
-    private bool IsPlayerOnGround() {
-        var dist = Physics.Raycast(transform.position, -Vector3.up, distanceFromGround + 0.1f);
-        return dist;
-    }
+	void OnCollisionEnter2D(Collision2D col)
+	{
+		isInAir = false;
+	}
 
 }
