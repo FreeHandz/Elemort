@@ -7,14 +7,19 @@ public class PlayerAction : MonoBehaviour
 {
     public Player player;
 
+    /// <summary>
+    /// Call use card method when player tries to play a card.
+    /// </summary>
+    /// <param name="card">Returns true, when it is a valid move to play the card, otherwise false</param>
+    /// <returns></returns>
     public bool useCard(Card card)
     {
-        if (player.mana < card.manaCost)
+        if (player.Health < card.cost)
         {
             return false;
         }
 
-        player.mana -= card.manaCost;
+        player.takeDamage(card.cost, true);
 
         switch (card.type)
         {
