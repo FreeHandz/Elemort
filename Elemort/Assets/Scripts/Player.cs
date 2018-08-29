@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     // todo: Ezt ki kell még találni
     private const int defaultHealth = 20;
     private const float defaultMass = 1;
-    private const float lightWeightMass = 0.3f;
+    private const float lightWeightMass = 0.6f;
 
     private DateTime lightWeightUntil = DateTime.Now;
     private DateTime safeModeUntil = DateTime.Now;

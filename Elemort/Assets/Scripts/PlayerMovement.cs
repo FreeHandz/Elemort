@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Jump() {
         var body = GetComponent<Rigidbody2D>();
-        body.velocity = new Vector2(0, jumpHeight);
+		body.velocity = new Vector2(0, (jumpHeight * (1 / body.mass)));
 		isInAir = true;
     }
 
