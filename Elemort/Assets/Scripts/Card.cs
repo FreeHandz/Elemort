@@ -21,7 +21,7 @@ public class Card: ScriptableObject {
 	public new string name;
 	public string description;
 
-	public Image artWork;
+	public Sprite artWork;
 	public int manaCost;
 
 	public ElementType elementType;

@@ -10,11 +10,18 @@ public class HandDisplay : MonoBehaviour {
 	public void RenderHand()
 	{
 		if (GameManager.instance.player.hand.Count > 0) {
-			for (int i = 0; i < handSlots.Count; i++) {
-				GameObject.Instantiate (cardDisplayPrefab, gameObject.transform);
-				cardDisplayPrefab.card = GameManager.instance.player.hand [i];
 
-				cardDisplayPrefab.RenderCard();
+			for (int i = 0; i < handSlots.Count; i++) {
+
+				if (i < GameManager.instance.player.hand.Count) {
+					var card = GameObject.Instantiate (cardDisplayPrefab, handSlots[i].transform);
+
+					cardDisplayPrefab.card = GameManager.instance.player.hand [i];
+
+					cardDisplayPrefab.RenderCard ();
+
+					cardDisplayPrefab.transform.localPosition = handSlots [i].transform.position;
+				}
 			}
 		}
 	}
