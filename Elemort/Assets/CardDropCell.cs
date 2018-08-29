@@ -6,6 +6,7 @@ public class CardDropCell : MonoBehaviour {
 
 	void OnSimpleDragAndDropEvent(DragAndDropCell.DropEventDescriptor desc)
 	{
-		Debug.Log ("HI");
+		Card droppedCard = desc.item.GetComponent<CardDisplay> ().card;
+		GameManager.instance.playerAction.useCard (droppedCard);
 	}
 }
