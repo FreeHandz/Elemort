@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damage : MonoBehaviour
+public abstract class Damage : MonoBehaviour
 {
     [HideInInspector]
     public int damageAmount = 0;
 
     [HideInInspector]
     public DamageSourceType source = DamageSourceType.Other;
+
+    abstract public void damageTaken();
 }
 
 public enum DamageSourceType

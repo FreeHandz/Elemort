@@ -30,4 +30,9 @@ public class FireBall : Damage
 
         Destroy(this.gameObject);
     }
+
+    public override void damageTaken()
+    {
+        Destroy(this.gameObject);
+    }
 }

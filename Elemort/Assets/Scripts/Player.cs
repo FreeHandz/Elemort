@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject safeModeObject;
+
+    // TODO: Ez nincs még settelve, ha akarjuk használni akkor setteljük
+    [SerializeField]
+    private Transform safeModeSlot;
+
     // todo: Ezt ki kell még találni
     private const int defaultHealth = 20;
     private const float defaultMass = 1;
@@ -27,6 +34,16 @@ public class Player : MonoBehaviour
     public void startLightWeight(int duration)
     {
 		lightWeightUntil = DateTime.Now.AddSeconds(duration);
+    }
+
+    public void startSafeMode(int duration)
+    {
+		safeModeUntil = DateTime.Now.AddSeconds(duration);
+
+        // TODO: Ha lesz használva a safemodeslot, akkor itt cseréljük ki a this transformot
+        SafeMode safeMode = GameObject.Instantiate(safeModeObject, this.transform).GetComponent<SafeMode>();
+
+        safeMode.init(duration);
     }
 
     public void Update()
@@ -80,7 +97,8 @@ public class Player : MonoBehaviour
 
             if (damage.source == DamageSourceType.Enemy || damage.source == DamageSourceType.Other)
             {
-                health -= damage.damageAmount;
+                takeDamage(damage.damageAmount);
+                damage.damageTaken();
             }
         }
     }
