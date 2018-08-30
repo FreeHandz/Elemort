@@ -10,14 +10,17 @@ public class PlayerMovement : MonoBehaviour {
 
 	private bool isInAir;
 
+    private float modifiedSpeed;
+
     void Start() {
 		isInAir = false;
+        modifiedSpeed = speed;
     }
 
     void Update() {
-        var x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
         var jumpedButtonPressed = Input.GetButton("Jump");
-		if (jumpedButtonPressed && !isInAir)
+        var x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * modifiedSpeed;
+        if (jumpedButtonPressed && !isInAir)
             Jump();
 
         transform.Translate(x, 0, 0);
@@ -26,12 +29,14 @@ public class PlayerMovement : MonoBehaviour {
     private void Jump() {
         var body = GetComponent<Rigidbody2D>();
 		body.velocity = new Vector2(0, (jumpHeight * (1 / body.mass)));
-		isInAir = true;
+        modifiedSpeed = 5;
+        isInAir = true;
     }
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		isInAir = false;
+        modifiedSpeed = speed;
 	}
 
 }
