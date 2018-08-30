@@ -4,8 +4,6 @@ using UnityEngine;
 using System;
 
 public class CardDropCell : MonoBehaviour {
-	public GameObject cardParticle;
-
 	void OnSimpleDragAndDropEvent(DragAndDropCell.DropEventDescriptor desc)
 	{
 		if (desc.triggerType != DragAndDropCell.TriggerType.DropEventEnd)
@@ -17,10 +15,7 @@ public class CardDropCell : MonoBehaviour {
 
 			GameManager.instance.player.hand.Remove (droppedCard.card);
 
-			GameObject particleSystem = GameObject.Instantiate (cardParticle, desc.destinationCell.gameObject.transform);
-			particleSystem.transform.localPosition = new Vector3(0, 0, 20f) ;
-
-			StartCoroutine(WaitAndDestroy (0.3f, droppedCard, particleSystem.GetComponent<ParticleSystem> ()));
+			StartCoroutine(WaitAndDestroy (0.3f, droppedCard));
 
             GameManager.instance.playerHand.Draw();
 		} else {
@@ -28,11 +23,10 @@ public class CardDropCell : MonoBehaviour {
 		}
 	}
 
-	IEnumerator WaitAndDestroy(float sec, CardDisplay card, ParticleSystem particle)
+	IEnumerator WaitAndDestroy(float sec, CardDisplay card)
 	{
 		yield return new WaitForSeconds(sec);
 
 		Destroy(card.gameObject);
-		particle.Play ();
 	}
 }
