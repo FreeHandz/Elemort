@@ -54,6 +54,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerHand: {fileID: 0}
   playerAction: {fileID: 0}
+  dialogueManager: {fileID: 0}
   allCards:
   - {fileID: 11400000, guid: 771e598654115ed41984ea3ff6bd92d8, type: 2}
   - {fileID: 11400000, guid: 5ab2417ed752228448f932a29ca85d3a, type: 2}

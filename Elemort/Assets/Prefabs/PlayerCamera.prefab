@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4488838381107444}
   - component: {fileID: 20564396654798778}
   - component: {fileID: 81510957645343320}
-  - component: {fileID: 114753343607387866}
+  - component: {fileID: 114370441598356156}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -119,7 +119,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310227077129928}
   m_Enabled: 1
---- !u!114 &114753343607387866
+--- !u!114 &114370441598356156
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,10 +127,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310227077129928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c1a8f1e164a0414fbddd2104fe1bfeb, type: 3}
+  m_Script: {fileID: 11500000, guid: fd2e861cb274cc74ebd5d99e1d441e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  damping: 1
+  lookAheadFactor: 3
+  lookAheadReturnSpeed: 0.5
+  lookAheadMoveThreshold: 0.1
+  yPosRestriction: -1
 --- !u!212 &212515619075310252
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -166,12 +171,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -100
-  m_Sprite: {fileID: 21300000, guid: c955fa68d19917b4db112de44c23ed8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47c8fcee73e13114d800e191a5c77021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.81}
+  m_Size: {x: 19.21, y: 12.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
