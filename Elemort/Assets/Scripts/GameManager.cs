@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 	public Player player;
 	public HandDisplay playerHand;
 	public PlayerAction playerAction;
+    public DialogueManager dialogueManager;
 
 	public static GameManager instance;
 

@@ -1,0 +1,76 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DialogueManager : MonoBehaviour {
+
+    public Queue<string> sentences;
+
+    public Text dialogueText;
+
+    public Text NPCName;
+
+    public Animator animator;
+
+    public bool isDialogShown;
+
+    private bool isCurrentlyCounting;
+
+	// Use this for initialization
+	void Start () {
+        sentences = new Queue<string>();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        {
+            DisplayNextSentence();
+        }
+	}
+
+    
+    public void StartDialogue(Dialogue dialogue)
+    {
+        animator.SetBool("isDialogOpen", true);
+        NPCName.text = dialogue.NPCName;
+        sentences.Clear();
+
+        foreach (string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        DisplayNextSentence();
+    }
+
+    IEnumerator TypeSentece(string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
+    }
+
+    public void DisplayNextSentence()
+    {
+        if (sentences.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
+
+        string sentence = sentences.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(TypeSentece(sentence));
+
+    }
+
+    private void EndDialogue()
+    {
+        animator.SetBool("isDialogOpen", false);
+    }
+}
