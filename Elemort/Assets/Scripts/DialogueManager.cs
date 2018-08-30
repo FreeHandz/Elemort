@@ -11,14 +11,11 @@ public class DialogueManager : MonoBehaviour {
 
     public Text NPCName;
 
-    public Animator animator;
-
     public bool isDialogShown;
 
     private bool isCurrentlyCounting;
 
-	// Use this for initialization
-	void Start () {
+	void Awake () {
         sentences = new Queue<string>();
 	}
 	
@@ -33,7 +30,8 @@ public class DialogueManager : MonoBehaviour {
     
     public void StartDialogue(Dialogue dialogue)
     {
-        animator.SetBool("isDialogOpen", true);
+        gameObject.SetActive(true);
+        isDialogShown = true;
         NPCName.text = dialogue.NPCName;
         sentences.Clear();
 
@@ -41,7 +39,6 @@ public class DialogueManager : MonoBehaviour {
         {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
     }
 
@@ -71,6 +68,7 @@ public class DialogueManager : MonoBehaviour {
 
     private void EndDialogue()
     {
-        animator.SetBool("isDialogOpen", false);
+        gameObject.SetActive(false);
+        isDialogShown = false;
     }
 }

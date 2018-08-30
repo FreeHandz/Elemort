@@ -1,10 +1,17 @@
-﻿                                        using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject safeModeObject;
+
+    // TODO: Ez nincs még settelve, ha akarjuk használni akkor setteljük
+    [SerializeField]
+    private Transform safeModeSlot;
+
     // todo: Ezt ki kell még találni
     private const int defaultHealth = 20;
     private const float defaultMass = 1;
@@ -15,6 +22,7 @@ public class Player : MonoBehaviour
 
 	public List<Card> deck = new List<Card>();
 	public List<Card> hand = new List<Card>();
+    public List<GameObject> currentCollisions = new List<GameObject>();
 
     public GameObject fireBallPrefab;
     
@@ -27,6 +35,16 @@ public class Player : MonoBehaviour
     public void startLightWeight(int duration)
     {
 		lightWeightUntil = DateTime.Now.AddSeconds(duration);
+    }
+
+    public void startSafeMode(int duration)
+    {
+		safeModeUntil = DateTime.Now.AddSeconds(duration);
+
+        // TODO: Ha lesz használva a safemodeslot, akkor itt cseréljük ki a this transformot
+        SafeMode safeMode = GameObject.Instantiate(safeModeObject, this.transform).GetComponent<SafeMode>();
+
+        safeMode.init(duration);
     }
 
     public void Update()
@@ -46,6 +64,19 @@ public class Player : MonoBehaviour
         else
         {
             playersRigidbody.mass = defaultMass;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        {
+            foreach (GameObject gameObject in currentCollisions)
+            {
+                if (gameObject.tag.Equals("DialogueTriggerable"))
+                {
+                    DialogueTrigger objectTrigger = gameObject.GetComponent<DialogueTrigger>();
+                    if (!GameManager.instance.dialogueManager.isDialogShown)
+                        objectTrigger.TriggerDialogue();
+                }
+            }
         }
     }
 
@@ -74,14 +105,21 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        currentCollisions.Add(collision.gameObject);
         if (collision.tag == "Damage")
         {
             Damage damage = collision.gameObject.GetComponent<Damage>();
 
             if (damage.source == DamageSourceType.Enemy || damage.source == DamageSourceType.Other)
             {
-                health -= damage.damageAmount;
+                takeDamage(damage.damageAmount);
+                damage.damageTaken();
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        currentCollisions.Remove(collision.gameObject);
     }
 }
