@@ -990,7 +990,7 @@ Prefab:
     - target: {fileID: 20564396654798778, guid: 572ef4095dbb74d4d99b0424f80299c0,
         type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 791
+      value: 11031
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572ef4095dbb74d4d99b0424f80299c0, type: 2}
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 1226366021}
   - component: {fileID: 1226366023}
   - component: {fileID: 1226366024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlyingEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2d372d714d43648b2d996d06df77df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 30
 --- !u!1001 &1228350283
 Prefab:
   m_ObjectHideFlags: 0
@@ -1582,31 +1582,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1740199632953078, guid: 6efc5334ad2495d44967da69af4c109d, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1654052155365372, guid: 6efc5334ad2495d44967da69af4c109d, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1062146601864276, guid: 6efc5334ad2495d44967da69af4c109d, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1922142621418138, guid: 6efc5334ad2495d44967da69af4c109d, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1260675113617088, guid: 6efc5334ad2495d44967da69af4c109d, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1563530192822166, guid: 6efc5334ad2495d44967da69af4c109d, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1583805179169210, guid: 6efc5334ad2495d44967da69af4c109d, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efc5334ad2495d44967da69af4c109d, type: 2}
@@ -1965,8 +1965,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: whatIsGround.m_Bits
-      value: 512
+      value: 10240
       objectReference: {fileID: 0}
+    - target: {fileID: 114199095920107198, guid: 87a2357765801c34292d6718d8b4d770,
+        type: 2}
+      propertyPath: safeModeObject
+      value: 
+      objectReference: {fileID: 1963336667753172, guid: ef15f4279959ef9418f3918bd69f7d03,
+        type: 2}
+    - target: {fileID: 5800000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 74cece91fa3d687428e41b810f2777fa, type: 2}
+    - target: {fileID: 6100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 74cece91fa3d687428e41b810f2777fa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
   m_IsPrefabAsset: 0

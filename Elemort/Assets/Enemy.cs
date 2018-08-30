@@ -20,4 +20,18 @@ public class Enemy : MonoBehaviour {
 		// TODO enemy died
 		gameObject.SetActive(false);
 	}
+
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.tag == "Damage")
+		{
+			Damage damage = collision.gameObject.GetComponent<Damage>();
+
+			if (damage.source == DamageSourceType.Player || damage.source == DamageSourceType.Other)
+			{
+				takeDamage(damage.damageAmount);
+				damage.damageTaken();
+			}
+		}
+	}
 }
