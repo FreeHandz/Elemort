@@ -11,14 +11,15 @@ public class FireBall : Damage
     [SerializeField]
     private int force;
 
-    public void init(int duration, int damage)
+    public void init(int duration, int damage, DamageSourceType source)
     {
-        this.damage = damage;
+        this.source = source;
+        this.damageAmount = damage;
         StartCoroutine(killSelf(duration));
 
-        Rigidbody rigidbody = this.gameObject.GetComponent<Rigidbody>();
+        Rigidbody2D rigidbody = this.gameObject.GetComponent<Rigidbody2D>();
 
-        rigidbody.AddForce(new Vector3(force, 0, 0), ForceMode.Impulse);
+        rigidbody.AddForce(new Vector2(force, 0), ForceMode2D.Impulse);
     }
 
     IEnumerator killSelf(int duration)
@@ -28,10 +29,5 @@ public class FireBall : Damage
         //TODO: Create bummmmm
 
         Destroy(this.gameObject);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Collision");
     }
 }
