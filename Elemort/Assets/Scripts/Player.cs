@@ -62,8 +62,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void fireFireball()
+    public void fireFireball(int duration, int damage)
     {
-        GameObject.Instantiate(fireBallPrefab, this.gameObject.transform);
+        GameObject fireBallGameObject = GameObject.Instantiate(fireBallPrefab);
+
+        fireBallGameObject.transform.position = this.transform.position;
+
+        FireBall fireBall = fireBallGameObject.GetComponent<FireBall>();
+        fireBall.init(duration, damage);
     }
 }

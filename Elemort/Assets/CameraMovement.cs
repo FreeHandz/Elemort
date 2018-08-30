@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour {
 	{
 		offset = transform.position - GameManager.instance.player.transform.position;
 		offset.x = 0.45f;
+		offset.y = -1.5f;
 	}
 
 	void LateUpdate ()

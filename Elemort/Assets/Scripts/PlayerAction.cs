@@ -24,7 +24,7 @@ public class PlayerAction : MonoBehaviour
             case CardType.ForcePush:
                 break;
             case CardType.FireBall:
-                player.fireFireball();
+                player.fireFireball(card.duration, card.damage);
                 break;
             case CardType.SafeMode:
                 break;

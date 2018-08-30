@@ -29,4 +29,5 @@ public class Card: ScriptableObject {
 	public CardType type;
 
     public int duration;
+    public int damage;
 }
