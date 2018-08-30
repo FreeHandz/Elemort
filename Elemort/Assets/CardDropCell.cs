@@ -21,12 +21,11 @@ public class CardDropCell : MonoBehaviour {
 			particleSystem.transform.localPosition = new Vector3(0, 0, 20f) ;
 
 			StartCoroutine(WaitAndDestroy (1, droppedCard, particleSystem.GetComponent<ParticleSystem> ()));
-		
-			GameManager.instance.player.Draw ();
+
+            GameManager.instance.playerHand.Draw();
+
 		} else {
 			Debug.Log ("cannot play card");
-			Destroy (desc.item.gameObject);
-			GameManager.instance.playerHand.RenderHand ();
 		}
 	}
 

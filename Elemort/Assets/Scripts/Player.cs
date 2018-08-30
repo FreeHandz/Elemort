@@ -1,4 +1,4 @@
-﻿using System;
+﻿                                        using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,22 +66,4 @@ public class Player : MonoBehaviour
     {
         GameObject.Instantiate(fireBallPrefab, this.gameObject.transform);
     }
-
-	public void Draw()
-	{
-		while (hand.Count < 5) {
-			if (deck.Count == 0) {
-				Debug.Log ("no more cards in deck!");
-				break;
-			}
-
-			int randomIndex = ((int)UnityEngine.Random.Range (0, deck.Count - 1));
-			Card drawedCard = deck [randomIndex];
-
-			hand.Add (drawedCard);
-			deck.Remove (drawedCard);
-
-			GameManager.instance.playerHand.RenderHand ();
-		}
-	}
 }

@@ -29,7 +29,12 @@ public class GameManager : MonoBehaviour {
 
 	public void InitGame()
 	{
-		player.Draw ();
-		playerHand.RenderHand ();
+        while (GameManager.instance.player.hand.Count < 5)
+        {
+            if (GameManager.instance.player.deck.Count == 0)
+                break;
+
+            GameManager.instance.playerHand.Draw();
+        }
 	}
 }
