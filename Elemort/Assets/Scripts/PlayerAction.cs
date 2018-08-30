@@ -14,11 +14,6 @@ public class PlayerAction : MonoBehaviour
     /// <returns></returns>
     public bool useCard(Card card)
     {
-        if (player.Health < card.cost)
-        {
-            return false;
-        }
-
         player.takeDamage(card.cost, true);
 
         switch (card.type)

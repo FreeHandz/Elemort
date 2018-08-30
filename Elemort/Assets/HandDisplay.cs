@@ -2,39 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandDisplay : MonoBehaviour {
+public class HandDisplay : MonoBehaviour{
 	
 	public List<GameObject> handSlots = new List<GameObject>();
 	public CardDisplay cardDisplayPrefab;
+    
+    public void Draw()
+    {
+        var hand = GameManager.instance.player.hand;
+        var deck = GameManager.instance.player.deck;
 
-	public void EraseHand()
-	{
-		for (int i = 0; i < handSlots.Count; i++) {
-			CardDisplay[] items = handSlots [i].gameObject.GetComponentsInChildren<CardDisplay> ();
+        if (hand.Count < 5)
+        {
+            if (deck.Count == 0)
+            {
+                Debug.Log("no more cards in deck!");
+                return;
+            }
 
-			for (int j = 0; j < items.Length; j++) {
-				Destroy (items [j].gameObject);
+            int randomIndex = ((int)UnityEngine.Random.Range(0, deck.Count - 1));
+            Card drawedCard = deck[randomIndex];
+
+			if (drawedCard != null)
+			{
+				hand.Add(drawedCard);
+				deck.RemoveAt(randomIndex);
 			}
-		}
-	}
-		
-	public void RenderHand()
-	{
-		EraseHand ();
 
-		if (GameManager.instance.player.hand.Count > 0) {
-			for (int i = 0; i < handSlots.Count; i++) {
-				if (i < GameManager.instance.player.hand.Count) {
+            for (int i = 0; i < handSlots.Count; i++)
+            {
+                CardDisplay[] cardsInSlot = handSlots[i].GetComponentsInChildren<CardDisplay>();
 
-					var card = GameObject.Instantiate (cardDisplayPrefab, handSlots[i].transform);
+                if (cardsInSlot.Length == 0)
+                {
+                    CardDisplay card = GameObject.Instantiate(cardDisplayPrefab, handSlots[i].transform);
 
-					cardDisplayPrefab.transform.localPosition = Vector3.zero;
-					cardDisplayPrefab.card = GameManager.instance.player.hand [i];
+                    card.transform.localPosition = Vector3.zero;
+					card.card = drawedCard;
+					card.RenderCard ();
 
-					cardDisplayPrefab.RenderCard ();
-
-				}
-			}
-		}
-	}
+                    return;
+                }
+            }
+        }
+    }
 }

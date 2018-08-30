@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 
 public class CardDropCell : MonoBehaviour {
+	public GameObject cardParticle;
 
 	void OnSimpleDragAndDropEvent(DragAndDropCell.DropEventDescriptor desc)
 	{
@@ -16,14 +17,22 @@ public class CardDropCell : MonoBehaviour {
 
 			GameManager.instance.player.hand.Remove (droppedCard.card);
 
-				// TODO destroyoljuk a card displayert, nem kell többet
-			Destroy(droppedCard.gameObject, 1f);
+			GameObject particleSystem = GameObject.Instantiate (cardParticle, desc.destinationCell.gameObject.transform);
+			particleSystem.transform.localPosition = new Vector3(0, 0, 20f) ;
 
-			GameManager.instance.player.Draw ();
+			StartCoroutine(WaitAndDestroy (0.3f, droppedCard, particleSystem.GetComponent<ParticleSystem> ()));
+
+            GameManager.instance.playerHand.Draw();
 		} else {
 			Debug.Log ("cannot play card");
-			Destroy (desc.item.gameObject);
-			GameManager.instance.playerHand.RenderHand ();
 		}
+	}
+
+	IEnumerator WaitAndDestroy(float sec, CardDisplay card, ParticleSystem particle)
+	{
+		yield return new WaitForSeconds(sec);
+
+		Destroy(card.gameObject);
+		particle.Play ();
 	}
 }

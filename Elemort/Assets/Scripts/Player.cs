@@ -1,4 +1,4 @@
-﻿using System;
+﻿                                        using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     // todo: Ezt ki kell még találni
     private const int defaultHealth = 20;
     private const float defaultMass = 1;
-    private const float lightWeightMass = 0.3f;
+    private const float lightWeightMass = 0.6f;
 
     private DateTime lightWeightUntil = DateTime.Now;
     private DateTime safeModeUntil = DateTime.Now;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)
         {
-            //TODO: Init endgame
+			GameManager.instance.EndGame ();
         }
 
         Rigidbody2D playersRigidbody = this.GetComponent<Rigidbody2D>();
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            //TODO: init endgame
+			GameManager.instance.EndGame ();
         }
     }
 
@@ -71,22 +71,4 @@ public class Player : MonoBehaviour
         FireBall fireBall = fireBallGameObject.GetComponent<FireBall>();
         fireBall.init(duration, damage);
     }
-
-	public void Draw()
-	{
-		while (hand.Count < 5) {
-			if (deck.Count == 0) {
-				Debug.Log ("no more cards in deck!");
-				break;
-			}
-
-			int randomIndex = ((int)UnityEngine.Random.Range (0, deck.Count - 1));
-			Card drawedCard = deck [randomIndex];
-
-			hand.Add (drawedCard);
-			deck.Remove (drawedCard);
-
-			GameManager.instance.playerHand.RenderHand ();
-		}
-	}
 }

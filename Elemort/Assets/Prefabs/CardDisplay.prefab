@@ -212,7 +212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ligh Weight
+  m_Text: Safe mode
 --- !u!114 &114608385246632606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,7 +272,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 5
 --- !u!114 &114864285046163452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,11 +284,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a720f0d1393a5142a5274ea4d65e3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 3c6b67ac7e53216439c502093930aa31, type: 2}
+  card: {fileID: 11400000, guid: 07fde9f141429bd4e82a216b5cfa74f2, type: 2}
   title: {fileID: 114598454924913048}
   description: {fileID: 114915022768146060}
   artWork: {fileID: 114608385246632606}
   manaCost: {fileID: 114609282171396370}
+  cardTemplate: {fileID: 114398871826069522}
+  fireTemplate: {fileID: 21300000, guid: 4c12d2ef0e5d73a4fabb1b13b0c1fafc, type: 3}
+  earthTemplate: {fileID: 21300000, guid: 0adf9ea72d639634e893335cba25b10c, type: 3}
+  waterTemplate: {fileID: 21300000, guid: c616cc23e51b0284484e816410e5ef9b, type: 3}
+  windTemplate: {fileID: 21300000, guid: b4ce6c8545bab4f4ca0572f41a8641ec, type: 3}
 --- !u!114 &114915022768146060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,7 +326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: lorem ipsum
+  m_Text: desc
 --- !u!222 &222204331073171066
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -451,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -49.9, y: -76.8}
+  m_AnchoredPosition: {x: 12, y: -76.8}
   m_SizeDelta: {x: 23.92, y: 22.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224501649839314604
