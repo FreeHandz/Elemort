@@ -20,7 +20,7 @@ public class CardDropCell : MonoBehaviour {
 			GameObject particleSystem = GameObject.Instantiate (cardParticle, desc.destinationCell.gameObject.transform);
 			particleSystem.transform.localPosition = new Vector3(0, 0, 20f) ;
 
-			StartCoroutine(WaitAndDestroy (1, droppedCard, particleSystem.GetComponent<ParticleSystem> ()));
+			StartCoroutine(WaitAndDestroy (0.3f, droppedCard, particleSystem.GetComponent<ParticleSystem> ()));
 
             GameManager.instance.playerHand.Draw();
 		} else {
