@@ -14,6 +14,7 @@ public class PlayerAction : MonoBehaviour
     /// <returns></returns>
     public bool useCard(Card card)
     {
+		Debug.Log ("card: " + card);
         player.takeDamage(card.cost, true);
 
         switch (card.type)

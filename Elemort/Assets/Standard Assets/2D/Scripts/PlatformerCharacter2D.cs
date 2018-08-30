@@ -18,7 +18,7 @@ namespace UnitySampleAssets._2D
 
         private Transform groundCheck; // A position marking where to check if the player is grounded.
         private float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-        private bool grounded = false; // Whether or not the player is grounded.
+        public bool grounded = false; // Whether or not the player is grounded.
         private Transform ceilingCheck; // A position marking where to check for ceilings
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator anim; // Reference to the player's animator component.
@@ -40,6 +40,14 @@ namespace UnitySampleAssets._2D
         {
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
+
+			// TODO DEBUG
+			float x = groundCheck.position.x;
+			float y = groundCheck.position.y;
+
+			Debug.DrawLine (new Vector3 (x - groundedRadius, y, 0), new Vector3 (x + groundedRadius, y, 0));
+			Debug.DrawLine (new Vector3 (x, y - groundedRadius, 0), new Vector3 (x, y  + groundedRadius, 0));
+
             anim.SetBool("Ground", grounded);
 
             // Set the vertical animation
@@ -49,8 +57,6 @@ namespace UnitySampleAssets._2D
 
         public void Move(float move, bool crouch, bool jump)
         {
-
-
             // If crouching, check to see if the character can stand up
             if (!crouch && anim.GetBool("Crouch"))
             {
