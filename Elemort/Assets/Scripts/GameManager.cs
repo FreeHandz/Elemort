@@ -37,4 +37,10 @@ public class GameManager : MonoBehaviour {
             GameManager.instance.playerHand.Draw();
         }
 	}
+
+	public void EndGame()
+	{
+		Debug.Log ("player died!");
+		// TODO
+	}
 }

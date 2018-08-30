@@ -23,7 +23,6 @@ public class CardDropCell : MonoBehaviour {
 			StartCoroutine(WaitAndDestroy (1, droppedCard, particleSystem.GetComponent<ParticleSystem> ()));
 
             GameManager.instance.playerHand.Draw();
-
 		} else {
 			Debug.Log ("cannot play card");
 		}

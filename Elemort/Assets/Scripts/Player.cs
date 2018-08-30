@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)
         {
-            //TODO: Init endgame
+			GameManager.instance.EndGame ();
         }
 
         Rigidbody2D playersRigidbody = this.GetComponent<Rigidbody2D>();
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            //TODO: init endgame
+			GameManager.instance.EndGame ();
         }
     }
 
