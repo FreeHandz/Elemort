@@ -127,6 +127,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07fde9f141429bd4e82a216b5cfa74f2, type: 2}
   - {fileID: 11400000, guid: a7335ce3f4cabc741984a11c16a55e7b, type: 2}
   hand: []
+  currentCollisions: []
   fireBallPrefab: {fileID: 1006206000993220, guid: f54dfc615897f3c4ebb052b40913a9b2,
     type: 2}
 --- !u!212 &212498364756286590
