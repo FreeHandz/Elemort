@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Transform safeModeSlot;
 
     // todo: Ezt ki kell még találni
-    private const int defaultHealth = 20;
+    public int defaultHealth = 20;
     private const float defaultMass = 1;
     private const float lightWeightMass = 0.6f;
 
@@ -26,7 +26,8 @@ public class Player : MonoBehaviour
 
     public GameObject fireBallPrefab;
     
-    private int health = defaultHealth;
+    private int health;
+
     public int Health
     {
         get { return health; }
@@ -36,6 +37,11 @@ public class Player : MonoBehaviour
     {
 		lightWeightUntil = DateTime.Now.AddSeconds(duration);
     }
+
+	void Start()
+	{
+		health = defaultHealth;
+	}
 
     public void startSafeMode(int duration)
     {
@@ -73,8 +79,10 @@ public class Player : MonoBehaviour
                 if (gameObject.tag.Equals("DialogueTriggerable"))
                 {
                     DialogueTrigger objectTrigger = gameObject.GetComponent<DialogueTrigger>();
-                    if (!GameManager.instance.dialogueManager.isDialogShown)
-                        objectTrigger.TriggerDialogue();
+					if (!GameManager.instance.dialogueManager.isDialogShown) {
+						Debug.Log ("trigger dialgoe");
+						objectTrigger.TriggerDialogue();
+					}
                 }
             }
         }

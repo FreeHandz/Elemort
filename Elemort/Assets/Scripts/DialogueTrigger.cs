@@ -6,7 +6,6 @@ public class DialogueTrigger : MonoBehaviour {
 
     public Dialogue dialogue;
 
-
     public void TriggerDialogue()
     {
         if (dialogue.sentences.Length > 0)

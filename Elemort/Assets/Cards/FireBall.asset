@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 746b9b1a5695a3b4c82f35d263e690d0, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  name: FireBall
-  description: desc
+  name: Ardor
+  description: "\"A t\u0171z k\xE1rty\xE1ja m\xE1r nem egy haland\xF3t \xE9getett
+    porr\xE1.\""
   artWork: {fileID: 21300000, guid: a2c24af34aa4c174eaa81be659a53461, type: 3}
   cost: 12
   elementType: 1
