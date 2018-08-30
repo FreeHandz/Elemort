@@ -15,12 +15,12 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - Ground
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Fireball
+  - Environment
+  - Forcepush
+  - PushableEnvironment
   - 
   - 
   - 
