@@ -30,13 +30,7 @@ public class GameManager : MonoBehaviour {
 
 	public void InitGame()
 	{
-        while (GameManager.instance.player.hand.Count < 5)
-        {
-            if (GameManager.instance.player.deck.Count == 0)
-                break;
-
-            GameManager.instance.playerHand.Draw();
-        }
+        // TODO 
 	}
 
 	public void EndGame()
