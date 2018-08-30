@@ -11,10 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 746b9b1a5695a3b4c82f35d263e690d0, type: 3}
   m_Name: Freeze
   m_EditorClassIdentifier: 
-  name: Freeze
-  description: freeze!
+  name: Algor
+  description: "\"Meg\xE1llt az id\u0151. Nem tudtam mozogni...\""
   artWork: {fileID: 21300000, guid: a2c24af34aa4c174eaa81be659a53461, type: 3}
   cost: 10
   elementType: 2
   type: 6
   duration: 30
+  damage: 0

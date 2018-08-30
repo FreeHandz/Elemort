@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -3.29, z: 0}
+  m_LocalPosition: {x: -0.07, y: -2.89, z: 0}
   m_LocalScale: {x: 0.56448287, y: 0.5644837, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8065, y: 0.347, z: 2.48}
+  m_LocalPosition: {x: -11.85, y: -0.16, z: 2.48}
   m_LocalScale: {x: 0.27890033, y: 0.27622253, z: 0.15743446}
   m_Children:
   - {fileID: 400000}
@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 2.62, z: 0}
+  m_LocalPosition: {x: 0.04, y: 2.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -122,7 +122,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 74cece91fa3d687428e41b810f2777fa, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -137,11 +137,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 74cece91fa3d687428e41b810f2777fa, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.028589278, y: -0.35965443}
+  m_Offset: {x: -0.028589249, y: -0.22274351}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -152,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9324093, y: 4.7802563}
+  m_Size: {x: 1.9324093, y: 4.5064344}
   m_EdgeRadius: 0
 --- !u!95 &9500000
 Animator:
@@ -184,12 +184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  jumpForce: 30
-  crouchSpeed: 0.25
+  jumpForce: 500
+  crouchSpeed: 0
   airControl: 1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 10240
   grounded: 0
 --- !u!212 &21200000
 SpriteRenderer:
@@ -259,14 +259,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7f5f7124edf7c4d8298b408b667fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  safeModeObject: {fileID: 1963336667753172, guid: ef15f4279959ef9418f3918bd69f7d03,
+    type: 2}
+  safeModeSlot: {fileID: 0}
+  defaultHealth: 20
   deck:
   - {fileID: 11400000, guid: 771e598654115ed41984ea3ff6bd92d8, type: 2}
   - {fileID: 11400000, guid: 5ab2417ed752228448f932a29ca85d3a, type: 2}
   - {fileID: 11400000, guid: 1ce89c5c74213ac4fb4e576c9d056e50, type: 2}
   - {fileID: 11400000, guid: 3c6b67ac7e53216439c502093930aa31, type: 2}
-  - {fileID: 11400000, guid: a7335ce3f4cabc741984a11c16a55e7b, type: 2}
   - {fileID: 11400000, guid: 07fde9f141429bd4e82a216b5cfa74f2, type: 2}
   hand: []
+  currentCollisions: []
   fireBallPrefab: {fileID: 1006206000993220, guid: f54dfc615897f3c4ebb052b40913a9b2,
     type: 2}
 --- !u!114 &114996441567775064
