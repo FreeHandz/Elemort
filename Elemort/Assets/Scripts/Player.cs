@@ -62,13 +62,26 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void fireFireball(int duration, int damage)
+    public void fireFireball(int duration, int damage, DamageSourceType source)
     {
         GameObject fireBallGameObject = GameObject.Instantiate(fireBallPrefab);
 
         fireBallGameObject.transform.position = this.transform.position;
 
         FireBall fireBall = fireBallGameObject.GetComponent<FireBall>();
-        fireBall.init(duration, damage);
+        fireBall.init(duration, damage, source);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Damage")
+        {
+            Damage damage = collision.gameObject.GetComponent<Damage>();
+
+            if (damage.source == DamageSourceType.Enemy || damage.source == DamageSourceType.Other)
+            {
+                health -= damage.damageAmount;
+            }
+        }
     }
 }
