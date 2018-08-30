@@ -6,18 +6,10 @@ public class DialogueTrigger : MonoBehaviour {
 
     public Dialogue dialogue;
 
+
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        if (dialogue.sentences.Length > 0)
+            GameManager.instance.dialogueManager.StartDialogue(dialogue);
     }
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

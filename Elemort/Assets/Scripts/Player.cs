@@ -1,4 +1,4 @@
-﻿                                        using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
 	public List<Card> deck = new List<Card>();
 	public List<Card> hand = new List<Card>();
+    public List<GameObject> currentCollisions = new List<GameObject>();
 
     public GameObject fireBallPrefab;
     
@@ -47,6 +48,19 @@ public class Player : MonoBehaviour
         {
             playersRigidbody.mass = defaultMass;
         }
+
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        {
+            foreach (GameObject gameObject in currentCollisions)
+            {
+                if (gameObject.tag.Equals("DialogueTriggerable"))
+                {
+                    DialogueTrigger objectTrigger = gameObject.GetComponent<DialogueTrigger>();
+                    if (!GameManager.instance.dialogueManager.isDialogShown)
+                        objectTrigger.TriggerDialogue();
+                }
+            }
+        }
     }
 
     public void takeDamage(int damage, bool fromCard = false)
@@ -74,6 +88,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        currentCollisions.Add(collision.gameObject);
         if (collision.tag == "Damage")
         {
             Damage damage = collision.gameObject.GetComponent<Damage>();
@@ -83,5 +98,10 @@ public class Player : MonoBehaviour
                 health -= damage.damageAmount;
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        currentCollisions.Remove(collision.gameObject);
     }
 }
