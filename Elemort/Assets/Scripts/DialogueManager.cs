@@ -40,6 +40,7 @@ public class DialogueManager : MonoBehaviour {
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
+        Time.timeScale = 0;
     }
 
     IEnumerator TypeSentece(string sentence)
@@ -70,5 +71,6 @@ public class DialogueManager : MonoBehaviour {
     {
         gameObject.SetActive(false);
         isDialogShown = false;
+        Time.timeScale = 1;
     }
 }
