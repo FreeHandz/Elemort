@@ -2,11 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnitySampleAssets._2D;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private GameObject safeModeObject;
+    private GameObject safeModePrefab;
+    [SerializeField]
+    private GameObject forcePushPrefab;
+    [SerializeField]
+    private GameObject fireBallPrefab;
 
     // TODO: Ez nincs még settelve, ha akarjuk használni akkor setteljük
     [SerializeField]
@@ -23,8 +28,6 @@ public class Player : MonoBehaviour
 	public List<Card> deck = new List<Card>();
 	public List<Card> hand = new List<Card>();
     public List<GameObject> currentCollisions = new List<GameObject>();
-
-    public GameObject fireBallPrefab;
     
     private int health;
 
@@ -48,9 +51,21 @@ public class Player : MonoBehaviour
 		safeModeUntil = DateTime.Now.AddSeconds(duration);
 
         // TODO: Ha lesz használva a safemodeslot, akkor itt cseréljük ki a this transformot
-        SafeMode safeMode = GameObject.Instantiate(safeModeObject, this.transform).GetComponent<SafeMode>();
+        SafeMode safeMode = GameObject.Instantiate(safeModePrefab, this.transform).GetComponent<SafeMode>();
 
         safeMode.init(duration);
+    }
+
+    public void startForcePush()
+    {
+        // TODO: Ha lesz használva a safemodeslot, akkor itt cseréljük ki a this transformot
+        GameObject forcePushObject = GameObject.Instantiate(forcePushPrefab, this.transform);
+
+        ForcePush forcePush = forcePushObject.GetComponent<ForcePush>();
+
+        bool isRight = GetComponent<PlatformerCharacter2D>().facingRight;
+
+        forcePush.init(this.transform, isRight);
     }
 
     public void Update()

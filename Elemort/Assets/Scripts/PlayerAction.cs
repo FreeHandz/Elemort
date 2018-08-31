@@ -23,12 +23,13 @@ public class PlayerAction : MonoBehaviour
                 player.startLightWeight(card.duration);
                 break;
             case CardType.ForcePush:
-                player.startSafeMode(card.duration);
+                player.startForcePush();
                 break;
             case CardType.FireBall:
                 player.fireFireball(card.duration, card.damage, DamageSourceType.Player);
                 break;
             case CardType.SafeMode:
+                player.startSafeMode(card.duration);
                 break;
             case CardType.Draw:
                 break;
