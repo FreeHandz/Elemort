@@ -50,6 +50,14 @@ public class Player : MonoBehaviour
 		mana = maxMana;
 	}
 
+    public void addMana(int mana)
+    {
+        if ((this.mana += mana) > maxMana)
+            this.mana = maxMana;
+        else
+            this.mana += mana;
+    }
+
     public void startSafeMode(int duration)
     {
 		safeModeUntil = DateTime.Now.AddSeconds(duration);
