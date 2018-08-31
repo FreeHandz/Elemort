@@ -65,7 +65,7 @@ public class ForcePush : MonoBehaviour
             if (finalAngle >= pushPullConeAngle)
                 continue;
 
-            var rb2d = other.GetComponent<Rigidbody2D>();
+            var rb2d = other.GetComponentInParent<Rigidbody2D>();
 
             if (rb2d)
                 rb2d.AddForce(playerToTargetVector.normalized * force, ForceMode2D.Impulse);
