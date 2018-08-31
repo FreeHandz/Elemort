@@ -17,5 +17,5 @@ MonoBehaviour:
   cost: 3
   elementType: 4
   type: 1
-  duration: 10
+  duration: 5
   damage: 0

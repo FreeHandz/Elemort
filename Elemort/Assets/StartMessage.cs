@@ -7,11 +7,14 @@ public class StartMessage : MonoBehaviour {
 
 	public Sprite openedSprite;
 	public bool isOpened = false;
+	public bool isTriggered = false;
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.E) && !isOpened)
+		if (Input.GetKeyDown(KeyCode.E) && !isOpened && isTriggered)
 		{
+			GameManager.instance.player.deck = GameManager.instance.defaultDeck;
+
 			isOpened = true;
 			gameObject.GetComponent<SpriteRenderer> ().sprite = openedSprite;
 
@@ -23,5 +26,15 @@ public class StartMessage : MonoBehaviour {
 				GameManager.instance.playerHand.Draw();
 			}
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		isTriggered = true;
+	}
+
+	void OnTriggerExit2D(Collider2D collider)
+	{
+		isTriggered = false;
 	}
 }

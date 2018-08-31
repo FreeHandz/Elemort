@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4089182029397704}
   - component: {fileID: 212515619075310252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ Camera:
   m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 11031
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   lookAheadFactor: 3
   lookAheadReturnSpeed: 0.5
   lookAheadMoveThreshold: 0.1
-  yPosRestriction: -1
+  yPosRestriction: -1e+9
 --- !u!212 &212515619075310252
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
             playersRigidbody.mass = defaultMass;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             foreach (GameObject gameObject in currentCollisions)
             {

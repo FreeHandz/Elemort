@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardDrop : MonoBehaviour {
 
     public Card cardToDrop;
+	public bool isTaken;
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +19,11 @@ public class CardDrop : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+		if (collision.gameObject.CompareTag("Player") && !isTaken)
         {
             GameManager.instance.player.deck.Add(cardToDrop);
             gameObject.SetActive(false);
+			isTaken = true;
         }
     }
 }
