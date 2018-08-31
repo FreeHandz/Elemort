@@ -14,8 +14,11 @@ public class PlayerAction : MonoBehaviour
     /// <returns></returns>
     public bool useCard(Card card)
     {
-		Debug.Log ("card: " + card);
-        player.takeDamage(card.cost, true);
+		if (player.mana < card.cost) {
+			return false;
+		}
+
+		player.mana -= card.cost;
 
         switch (card.type)
         {

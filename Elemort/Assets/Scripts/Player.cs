@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     
     private int health;
 
+	public int maxMana;
+	public int mana;
+
     public int Health
     {
         get { return health; }
@@ -44,6 +47,7 @@ public class Player : MonoBehaviour
 	void Start()
 	{
 		health = defaultHealth;
+		mana = maxMana;
 	}
 
     public void startSafeMode(int duration)
