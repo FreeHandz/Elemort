@@ -14,16 +14,28 @@ public class StartMessage : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.E) && !isOpened && isTriggered)
 		{
 			GameManager.instance.player.deck = GameManager.instance.defaultDeck;
+			GameManager.instance.player.hand = GameManager.instance.defaultHand;
 
 			isOpened = true;
 			gameObject.GetComponent<SpriteRenderer> ().sprite = openedSprite;
 
-			while (GameManager.instance.player.hand.Count < 5)
-			{
-				if (GameManager.instance.player.deck.Count == 0)
-					break;
+			List<GameObject> handSlots = GameManager.instance.playerHand.handSlots;
 
-				GameManager.instance.playerHand.Draw();
+			for (int j = 0; j < GameManager.instance.player.hand.Count; j++) {
+				for (int i = 0; i < handSlots.Count; i++)
+				{
+					CardDisplay[] cardsInSlot = handSlots[i].GetComponentsInChildren<CardDisplay>();
+
+					if (cardsInSlot.Length == 0)
+					{
+						CardDisplay cardDisplay = GameObject.Instantiate(GameManager.instance.playerHand.cardDisplayPrefab, handSlots[i].transform);
+
+						cardDisplay.transform.localPosition = Vector3.zero;
+						cardDisplay.card = GameManager.instance.player.hand[j];
+						cardDisplay.RenderCard ();
+						break;
+					}
+				}
 			}
 		}
 	}

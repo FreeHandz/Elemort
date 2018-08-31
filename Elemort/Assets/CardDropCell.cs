@@ -48,8 +48,6 @@ public class CardDropCell : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(sec);
 
-		List<GameObject> handSlots = GameManager.instance.playerHand.handSlots;
-
 		Destroy(card.gameObject);
 	}
 }
