@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 
 	public List<Card> defaultDeck = new List<Card> ();
+	public List<Card> defaultHand = new List<Card>();
 
 	void Awake()
 	{
