@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
 
-	public List<Card> allCards = new List<Card> ();
+	public List<Card> defaultDeck = new List<Card> ();
+	public List<Card> defaultHand = new List<Card>();
 
 	void Awake()
 	{
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour {
 
 	public void InitGame()
 	{
-        // TODO 
+		// TODO 
 	}
 
 	public void EndGame()

@@ -33,6 +33,9 @@ public class Player : MonoBehaviour
     
     private int health;
 
+	public int maxMana;
+	public int mana;
+
     public int Health
     {
         get { return health; }
@@ -46,7 +49,16 @@ public class Player : MonoBehaviour
 	void Start()
 	{
 		health = defaultHealth;
+		mana = maxMana;
 	}
+
+    public void addMana(int mana)
+    {
+        if ((this.mana += mana) > maxMana)
+            this.mana = maxMana;
+        else
+            this.mana += mana;
+    }
 
     public void startSafeMode(int duration)
     {
@@ -99,7 +111,7 @@ public class Player : MonoBehaviour
             playersRigidbody.mass = defaultMass;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             foreach (GameObject gameObject in currentCollisions)
             {

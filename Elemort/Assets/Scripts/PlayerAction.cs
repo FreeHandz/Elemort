@@ -12,10 +12,13 @@ public class PlayerAction : MonoBehaviour
     /// </summary>
     /// <param name="card">Returns true, when it is a valid move to play the card, otherwise false</param>
     /// <returns></returns>
-    public bool useCard(Card card)
+    public void useCard(Card card)
     {
-		Debug.Log ("card: " + card);
-        player.takeDamage(card.cost, true);
+		if (player.mana < card.cost) {
+			return;
+		}
+
+		player.mana -= card.cost;
 
         switch (card.type)
         {
@@ -40,11 +43,18 @@ public class PlayerAction : MonoBehaviour
                 player.startHeavyRain(card.duration);
                 break;
             default:
-                return false;
+                return;
         }
-
-        return true;
     }
+
+	public bool canPlayCard(Card card)
+	{
+		if (player.mana < card.cost) {
+			return false;
+		}
+
+		return true;
+	}
 }
 
 public enum CardType

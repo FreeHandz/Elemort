@@ -52,6 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 6
-  pushPullConeAngle: 42
-  force: 10
-  pushableLayers: 090000000b000000
+  pushPullConeAngle: 360
+  force: 1000
+  pushableLayers: 0d000000

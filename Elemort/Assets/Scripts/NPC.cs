@@ -18,12 +18,14 @@ public class NPC : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        sprite.enabled = true;
+        if (collision.gameObject.CompareTag("Player"))
+            sprite.enabled = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
 		GameManager.instance.dialogueManager.EndDialogue ();
-        sprite.enabled = false;
+        if (collision.gameObject.CompareTag("Player"))
+            sprite.enabled = false;
     }
 }

@@ -7,6 +7,12 @@ public class Enemy : MonoBehaviour {
 	public int health;
 	public int damage;
 
+    public bool isDead;
+
+    public Card cardToDrop;
+
+    public CardDrop droppedCardPrefab;
+
 	public void takeDamage(int damage, bool fromCard = false)
 	{
 		health -= damage;
@@ -18,7 +24,10 @@ public class Enemy : MonoBehaviour {
 
 	public void Die()
 	{
-		// TODO enemy died
+        // TODO enemy died
+        isDead = true;
+        var droppedCard = Instantiate(droppedCardPrefab, gameObject.transform.position, new Quaternion());
+        droppedCard.GetComponent<CardDrop>().cardToDrop = cardToDrop;
 		gameObject.SetActive(false);
 	}
 

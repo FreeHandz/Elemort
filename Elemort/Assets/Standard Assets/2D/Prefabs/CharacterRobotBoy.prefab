@@ -276,6 +276,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07fde9f141429bd4e82a216b5cfa74f2, type: 2}
   hand: []
   currentCollisions: []
+  maxMana: 50
+  mana: 0
 --- !u!114 &114996441567775064
 MonoBehaviour:
   m_ObjectHideFlags: 1
