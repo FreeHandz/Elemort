@@ -147,7 +147,10 @@ public class Player : MonoBehaviour
         fireBallGameObject.transform.position = this.transform.position;
 
         FireBall fireBall = fireBallGameObject.GetComponent<FireBall>();
-        fireBall.init(duration, damage, source);
+
+        bool isRight = GetComponent<PlatformerCharacter2D>().facingRight;
+
+        fireBall.init(duration, damage, source, isRight);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
