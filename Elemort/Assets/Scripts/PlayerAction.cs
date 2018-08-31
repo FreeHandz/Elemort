@@ -36,6 +36,9 @@ public class PlayerAction : MonoBehaviour
                 break;
             case CardType.Freeze:
                 break;
+            case CardType.HeavyRain:
+                player.startHeavyRain(card.duration);
+                break;
             default:
                 return false;
         }
@@ -51,5 +54,6 @@ public enum CardType
     FireBall = 3,
     SafeMode = 4,
     Draw = 5,
-    Freeze = 6
+    Freeze = 6,
+    HeavyRain = 7
 }

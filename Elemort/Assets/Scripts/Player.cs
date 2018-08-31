@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     private GameObject forcePushPrefab;
     [SerializeField]
     private GameObject fireBallPrefab;
+    [SerializeField]
+    private GameObject heavyRainPrefab;
 
     // TODO: Ez nincs még settelve, ha akarjuk használni akkor setteljük
     [SerializeField]
@@ -66,6 +68,16 @@ public class Player : MonoBehaviour
         bool isRight = GetComponent<PlatformerCharacter2D>().facingRight;
 
         forcePush.init(this.transform, isRight);
+    }
+
+    public void startHeavyRain(int duration)
+    {
+        // TODO: Ha lesz használva a safemodeslot, akkor itt cseréljük ki a this transformot
+        GameObject heavyRainGameObject = GameObject.Instantiate(heavyRainPrefab, this.transform);
+
+        HeavyRain forcePush = heavyRainGameObject.GetComponent<HeavyRain>();
+        
+        forcePush.init(this.transform, duration);
     }
 
     public void Update()
