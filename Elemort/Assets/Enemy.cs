@@ -6,6 +6,12 @@ public class Enemy : MonoBehaviour {
 
 	public int health;
 
+    public bool isDead;
+
+    public Card cardToDrop;
+
+    public CardDrop droppedCardPrefab;
+
 	public void takeDamage(int damage, bool fromCard = false)
 	{
 		health -= damage;
@@ -17,7 +23,10 @@ public class Enemy : MonoBehaviour {
 
 	public void Die()
 	{
-		// TODO enemy died
+        // TODO enemy died
+        isDead = true;
+        var droppedCard = Instantiate(droppedCardPrefab);
+        droppedCard.transform.position = gameObject.transform.position;
 		gameObject.SetActive(false);
 	}
 
