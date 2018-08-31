@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
 	public int maxMana;
 	public int mana;
 
+	public Camera playerCamera;
+
     public int Health
     {
         get { return health; }
@@ -85,7 +87,8 @@ public class Player : MonoBehaviour
     public void startHeavyRain(int duration)
     {
         // TODO: Ha lesz használva a safemodeslot, akkor itt cseréljük ki a this transformot
-        GameObject heavyRainGameObject = GameObject.Instantiate(heavyRainPrefab, this.transform);
+	
+		GameObject heavyRainGameObject = GameObject.Instantiate(heavyRainPrefab, playerCamera.transform);
 
         HeavyRain forcePush = heavyRainGameObject.GetComponent<HeavyRain>();
         

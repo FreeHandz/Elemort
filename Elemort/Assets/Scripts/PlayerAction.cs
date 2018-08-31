@@ -42,6 +42,9 @@ public class PlayerAction : MonoBehaviour
             case CardType.HeavyRain:
                 player.startHeavyRain(card.duration);
                 break;
+			case CardType.Mana:
+				player.addMana(20);
+				break;
 			case CardType.Heal:
 				player.Heal();
 				break;
@@ -70,4 +73,5 @@ public enum CardType
     Freeze = 6,
     HeavyRain = 7,
 	Heal = 8,
+	Mana = 9,
 }
