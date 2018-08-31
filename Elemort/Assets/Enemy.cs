@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	public int health;
+	public int damage;
 
     public bool isDead;
 
@@ -41,6 +42,14 @@ public class Enemy : MonoBehaviour {
 				takeDamage(damage.damageAmount);
 				damage.damageTaken();
 			}
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+		Debug.Log ("Coll enter");
+		if (coll.gameObject.CompareTag ("Player")) {
+			coll.gameObject.GetComponent<Player> ().takeDamage(damage);
 		}
 	}
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Freeze
   m_EditorClassIdentifier: 
   name: Algor
-  description: "\"Meg\xE1llt az id\u0151. Nem tudtam mozogni...\""
+  description: "\"Meg\xE1llt az id\u0151. Senki nem mozgott, csak \xE9n...\""
   artWork: {fileID: 21300000, guid: a2c24af34aa4c174eaa81be659a53461, type: 3}
   cost: 10
   elementType: 2
