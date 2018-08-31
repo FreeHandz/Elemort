@@ -26,8 +26,8 @@ public class Enemy : MonoBehaviour {
 	{
         // TODO enemy died
         isDead = true;
-        var droppedCard = Instantiate(droppedCardPrefab);
-        droppedCard.transform.position = gameObject.transform.position;
+        var droppedCard = Instantiate(droppedCardPrefab, gameObject.transform.position, new Quaternion());
+        droppedCard.GetComponent<CardDrop>().cardToDrop = cardToDrop;
 		gameObject.SetActive(false);
 	}
 

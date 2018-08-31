@@ -1307,6 +1307,18 @@ Prefab:
       propertyPath: patrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 69175165}
+    - target: {fileID: 114056255896354410, guid: e64ee0721a6157d46870f8604f19b2d3,
+        type: 2}
+      propertyPath: droppedCardPrefab
+      value: 
+      objectReference: {fileID: 114959104161532878, guid: 0103213415347e048973126e19540f08,
+        type: 2}
+    - target: {fileID: 114056255896354410, guid: e64ee0721a6157d46870f8604f19b2d3,
+        type: 2}
+      propertyPath: cardToDrop
+      value: 
+      objectReference: {fileID: 11400000, guid: 771e598654115ed41984ea3ff6bd92d8,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e64ee0721a6157d46870f8604f19b2d3, type: 2}
   m_IsPrefabAsset: 0

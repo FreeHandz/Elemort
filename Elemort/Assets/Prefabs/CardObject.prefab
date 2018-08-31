@@ -23,13 +23,13 @@ GameObject:
   - component: {fileID: 61980494551119306}
   - component: {fileID: 50706822730924140}
   - component: {fileID: 114959104161532878}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CardObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &50706822730924140
 Rigidbody2D:
   serializedVersion: 4
