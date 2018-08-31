@@ -42,6 +42,9 @@ public class PlayerAction : MonoBehaviour
             case CardType.HeavyRain:
                 player.startHeavyRain(card.duration);
                 break;
+			case CardType.Heal:
+				player.Heal();
+				break;
             default:
                 return;
         }
@@ -65,5 +68,6 @@ public enum CardType
     SafeMode = 4,
     Draw = 5,
     Freeze = 6,
-    HeavyRain = 7
+    HeavyRain = 7,
+	Heal = 8,
 }

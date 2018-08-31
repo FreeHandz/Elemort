@@ -140,6 +140,11 @@ public class Player : MonoBehaviour
         }
     }
 
+	public void Heal()
+	{
+		health = defaultHealth;
+	}
+
     public void fireFireball(int duration, int damage, DamageSourceType source)
     {
         GameObject fireBallGameObject = GameObject.Instantiate(fireBallPrefab);
