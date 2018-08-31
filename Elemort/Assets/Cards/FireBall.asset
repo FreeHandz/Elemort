@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Ardor
   description: "\"A t\u0171z k\xE1rty\xE1ja m\xE1r nem egy haland\xF3t \xE9getett
     porr\xE1.\""
-  artWork: {fileID: 21300000, guid: a2c24af34aa4c174eaa81be659a53461, type: 3}
+  artWork: {fileID: 21300000, guid: 2272b0265d5534641affbc377d306bb3, type: 3}
   cost: 12
   elementType: 1
   type: 3
