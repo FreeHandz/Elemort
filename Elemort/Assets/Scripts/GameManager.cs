@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	public Player player;
@@ -13,6 +15,8 @@ public class GameManager : MonoBehaviour {
 	public List<Card> defaultDeck = new List<Card> ();
 	public List<Card> defaultHand = new List<Card>();
 
+	public Image endGameImage;
+
 	void Awake()
 	{
 		if (instance == null)
@@ -21,7 +25,7 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 
 		// scenek közötti váltáskor ne pusztuljon el ez az object, mert ez lesz a felelős a globális dolgokért
-		DontDestroyOnLoad (gameObject);
+		// DontDestroyOnLoad (gameObject);
 	}
 
 	void Start()
@@ -36,7 +40,11 @@ public class GameManager : MonoBehaviour {
 
 	public void EndGame()
 	{
-		Debug.Log ("player died!");
-		// TODO
+		endGameImage.gameObject.SetActive (true);
+	}
+
+	public void StartGame()
+	{
+		SceneManager.LoadScene ("Elemort");
 	}
 }

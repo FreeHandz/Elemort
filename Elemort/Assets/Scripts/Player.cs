@@ -140,6 +140,11 @@ public class Player : MonoBehaviour
         }
     }
 
+	public void Heal()
+	{
+		health = defaultHealth;
+	}
+
     public void fireFireball(int duration, int damage, DamageSourceType source)
     {
         GameObject fireBallGameObject = GameObject.Instantiate(fireBallPrefab);
@@ -158,7 +163,11 @@ public class Player : MonoBehaviour
         currentCollisions.Add(collision.gameObject);
         if (collision.tag == "Damage")
         {
+			Debug.Log ("DAMAGA!");
+
             Damage damage = collision.gameObject.GetComponent<Damage>();
+
+			Debug.Log (damage);
 
             if (damage.source == DamageSourceType.Enemy || damage.source == DamageSourceType.Other)
             {

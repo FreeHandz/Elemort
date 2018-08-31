@@ -62,18 +62,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.022107124, y: -0.027376175}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.01, y: 4.16}
+    oldSize: {x: 11.18, y: 15.72}
     newSize: {x: 4.01, y: 4.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.01, y: 4.16}
+  m_Size: {x: 11.038673, y: 15.7314}
   m_EdgeRadius: 0
 --- !u!114 &114959104161532878
 MonoBehaviour:
@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardToDrop: {fileID: 11400000, guid: 771e598654115ed41984ea3ff6bd92d8, type: 2}
+  isTaken: 0
 --- !u!212 &212182244223759128
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -122,7 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3b8097e6a0a286c4682366695391aa58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6ce135f63380a344972f7142f801f0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,15 +140,15 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1840810979167410}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071064, w: -0.7071072}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.7142962, y: 0.7142962, z: 0.7142962}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0042847022, w: -0.9999909}
+  m_LocalPosition: {x: 0, y: 0, z: 89.99999}
+  m_LocalScale: {x: 0.042752914, y: 0.042752914, z: 0.042752914}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.00001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.49100003}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.570533, y: 1.9435737}
+  m_AnchoredPosition: {x: -2.57052, y: 1.9436}
   m_SizeDelta: {x: 3.1, y: 2.5}
   m_Pivot: {x: 0.5, y: 0.5}
