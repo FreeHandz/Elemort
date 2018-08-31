@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746b9b1a5695a3b4c82f35d263e690d0, type: 3}
+  m_Name: Rain
+  m_EditorClassIdentifier: 
+  name: Aqua caelestis
+  description: "Hirtelen \xF3ri\xE1si vihar kerekedett."
+  artWork: {fileID: 21300000, guid: 2b5957666b7ce4b4b93fcf6c64b5bac2, type: 3}
+  cost: 10
+  elementType: 2
+  type: 7
+  duration: 10
+  damage: 0

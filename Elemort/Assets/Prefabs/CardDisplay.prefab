@@ -145,7 +145,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4c12d2ef0e5d73a4fabb1b13b0c1fafc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c43f1a4265164f24683ee4c997b9ca2e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -290,10 +290,10 @@ MonoBehaviour:
   artWork: {fileID: 114608385246632606}
   manaCost: {fileID: 114609282171396370}
   cardTemplate: {fileID: 114398871826069522}
-  fireTemplate: {fileID: 21300000, guid: 4c12d2ef0e5d73a4fabb1b13b0c1fafc, type: 3}
-  earthTemplate: {fileID: 21300000, guid: 0adf9ea72d639634e893335cba25b10c, type: 3}
-  waterTemplate: {fileID: 21300000, guid: c616cc23e51b0284484e816410e5ef9b, type: 3}
-  windTemplate: {fileID: 21300000, guid: b4ce6c8545bab4f4ca0572f41a8641ec, type: 3}
+  fireTemplate: {fileID: 21300000, guid: bb18fcc9901398a4c94414a78ce1917b, type: 3}
+  earthTemplate: {fileID: 21300000, guid: 8c5822ab01e36ba46a4158b13218226d, type: 3}
+  waterTemplate: {fileID: 21300000, guid: c43f1a4265164f24683ee4c997b9ca2e, type: 3}
+  windTemplate: {fileID: 21300000, guid: 60df3ebdd9941b943bfe8981fd8bd42c, type: 3}
 --- !u!114 &114915022768146060
 MonoBehaviour:
   m_ObjectHideFlags: 1

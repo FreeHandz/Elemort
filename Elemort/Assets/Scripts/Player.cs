@@ -155,7 +155,11 @@ public class Player : MonoBehaviour
         currentCollisions.Add(collision.gameObject);
         if (collision.tag == "Damage")
         {
+			Debug.Log ("DAMAGA!");
+
             Damage damage = collision.gameObject.GetComponent<Damage>();
+
+			Debug.Log (damage);
 
             if (damage.source == DamageSourceType.Enemy || damage.source == DamageSourceType.Other)
             {
