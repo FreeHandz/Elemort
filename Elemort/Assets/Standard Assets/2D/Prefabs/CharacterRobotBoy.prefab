@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f91df3bd212f429df17f53ce2f364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  facingRight: 1
   maxSpeed: 10
   jumpForce: 500
   crouchSpeed: 0
@@ -259,7 +260,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7f5f7124edf7c4d8298b408b667fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  safeModeObject: {fileID: 1963336667753172, guid: ef15f4279959ef9418f3918bd69f7d03,
+  safeModePrefab: {fileID: 1963336667753172, guid: ef15f4279959ef9418f3918bd69f7d03,
+    type: 2}
+  forcePushPrefab: {fileID: 1335533513469942, guid: 39cb8bf39a4e0c8479df933bd71158bc,
+    type: 2}
+  fireBallPrefab: {fileID: 1006206000993220, guid: f54dfc615897f3c4ebb052b40913a9b2,
     type: 2}
   safeModeSlot: {fileID: 0}
   defaultHealth: 20
@@ -271,8 +276,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07fde9f141429bd4e82a216b5cfa74f2, type: 2}
   hand: []
   currentCollisions: []
-  fireBallPrefab: {fileID: 1006206000993220, guid: f54dfc615897f3c4ebb052b40913a9b2,
-    type: 2}
 --- !u!114 &114996441567775064
 MonoBehaviour:
   m_ObjectHideFlags: 1

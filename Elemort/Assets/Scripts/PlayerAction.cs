@@ -32,6 +32,7 @@ public class PlayerAction : MonoBehaviour
                 player.startSafeMode(card.duration);
                 break;
             case CardType.Draw:
+                //player.startDrawCard();
                 break;
             case CardType.Freeze:
                 break;
