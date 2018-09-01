@@ -544,7 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 0
   source: 3
-  force: 20
+  force: 9
 --- !u!114 &114680706112689652
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,6 +23,8 @@ public class CardDrop : MonoBehaviour {
         {
             GameManager.instance.player.deck.Add(cardToDrop);
             gameObject.SetActive(false);
+
+            GameManager.instance.newCardPopup.Show(cardToDrop);
 			isTaken = true;
         }
     }

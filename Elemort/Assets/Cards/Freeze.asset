@@ -14,7 +14,7 @@ MonoBehaviour:
   name: Algor
   description: "\"Meg\xE1llt az id\u0151. Senki nem mozgott, csak \xE9n...\""
   artWork: {fileID: 21300000, guid: cdae4b634bf4c4a4ca31fc3b318f8dbe, type: 3}
-  cost: 10
+  cost: 13
   elementType: 2
   type: 6
   duration: 30

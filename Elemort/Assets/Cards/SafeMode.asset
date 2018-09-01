@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: SafeMode
   m_EditorClassIdentifier: 
   name: Securito
-  description: "\"Jobb f\xE9lni.\""
+  description: "B\xE1rmi t\xF6rt\xE9nt, egyszer\u0171en nem tudtam meghalni..."
   artWork: {fileID: 21300000, guid: 80c4cd079c3d83a46b800a54ef4a300e, type: 3}
-  cost: 3
+  cost: 14
   elementType: 3
   type: 4
   duration: 10

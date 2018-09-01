@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 	public List<Card> hand = new List<Card>();
     public List<GameObject> currentCollisions = new List<GameObject>();
     
+    public bool isInvulnerable = false;
     private int health;
 
 	public int maxMana;
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour
 	void Start()
 	{
 		health = defaultHealth;
-		mana = maxMana;
+		mana = maxMana; 
 	}
 
     public void addMana(int mana)
@@ -102,6 +103,11 @@ public class Player : MonoBehaviour
 			GameManager.instance.EndGame ();
         }
 
+        if (transform.position.y < -20)
+        {
+            GameManager.instance.EndGame();
+        }
+
         Rigidbody2D playersRigidbody = this.GetComponent<Rigidbody2D>();
 
         if (lightWeightUntil > DateTime.Now)
@@ -133,7 +139,7 @@ public class Player : MonoBehaviour
     public void takeDamage(int damage, bool fromCard = false)
     {
         // Player is in safe mode, cannot take any damage, except if it is from playing a card
-        if (safeModeUntil > DateTime.Now && !fromCard)
+        if ((safeModeUntil > DateTime.Now && !fromCard) || isInvulnerable)
             return;
 
         health -= damage;
@@ -141,6 +147,8 @@ public class Player : MonoBehaviour
         {
 			GameManager.instance.EndGame ();
         }
+
+        gameObject.GetComponent<InvulnerableEffect>().StartEffect(10);
     }
 
 	public void Heal()

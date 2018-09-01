@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	public HandDisplay playerHand;
 	public PlayerAction playerAction;
     public DialogueManager dialogueManager;
+    public NewCardDisplay newCardPopup;
 
 	public static GameManager instance;
 
