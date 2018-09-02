@@ -21,6 +21,7 @@ public class CardDrop : MonoBehaviour {
     {
 		if (collision.gameObject.CompareTag("Player") && !isTaken)
         {
+            GameObject.Find("NewCardSound").GetComponent<AudioSource>().Play();
             GameManager.instance.player.deck.Add(cardToDrop);
             gameObject.SetActive(false);
 

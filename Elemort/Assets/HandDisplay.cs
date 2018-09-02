@@ -16,7 +16,8 @@ public class HandDisplay : MonoBehaviour{
         {
             if (deck.Count == 0)
             {
-                Debug.Log("no more cards in deck!");
+                Debug.Log("no more ca" +
+                    "rds in deck!");
                 return;
             }
 

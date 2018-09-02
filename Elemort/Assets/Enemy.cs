@@ -16,7 +16,8 @@ public class Enemy : MonoBehaviour {
 	public void takeDamage(int damage, bool fromCard = false)
 	{
 		health -= damage;
-		if (health <= 0)
+        GameObject.Find("EnemyDamageSound").GetComponent<AudioSource>().Play();
+        if (health <= 0)
 		{
 			Die ();
 		}

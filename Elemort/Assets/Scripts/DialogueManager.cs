@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour {
     
     public void StartDialogue(Dialogue dialogue)
     {
+        GameObject.Find("PopupSound").GetComponent<AudioSource>().Play();
         gameObject.SetActive(true);
         isDialogShown = true;
         NPCName.text = dialogue.NPCName;
@@ -60,6 +61,8 @@ public class DialogueManager : MonoBehaviour {
             EndDialogue();
             return;
         }
+
+        GameObject.Find("PopupSound").GetComponent<AudioSource>().Play();
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();

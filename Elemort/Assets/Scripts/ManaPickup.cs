@@ -20,6 +20,7 @@ public class ManaPickup : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GameObject.Find("HealManaSound").GetComponent<AudioSource>().Play();
             GameManager.instance.player.addMana(manaValue);
             gameObject.SetActive(false);
         }

@@ -143,6 +143,7 @@ public class Player : MonoBehaviour
             return;
 
         health -= damage;
+        GameObject.Find("DamageSound").GetComponent<AudioSource>().Play();
         if (health <= 0)
         {
 			GameManager.instance.EndGame ();

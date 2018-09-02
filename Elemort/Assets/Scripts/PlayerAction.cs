@@ -32,6 +32,7 @@ public class PlayerAction : MonoBehaviour
                 player.fireFireball(card.duration, card.damage, DamageSourceType.Player);
                 break;
             case CardType.SafeMode:
+                GameObject.Find("ShieldSound").GetComponent<AudioSource>().Play();
                 player.startSafeMode(card.duration);
                 break;
             case CardType.Draw:
@@ -43,10 +44,12 @@ public class PlayerAction : MonoBehaviour
                 player.startHeavyRain(card.duration);
                 break;
 			case CardType.Mana:
-				player.addMana(20);
+                GameObject.Find("HealManaSound").GetComponent<AudioSource>().Play();
+                player.addMana(20);
 				break;
 			case CardType.Heal:
-				player.Heal();
+                GameObject.Find("HealManaSound").GetComponent<AudioSource>().Play();
+                player.Heal();
 				break;
             default:
                 return;

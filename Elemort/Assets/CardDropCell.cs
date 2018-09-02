@@ -6,7 +6,9 @@ using System;
 public class CardDropCell : MonoBehaviour {
 	void OnSimpleDragAndDropEvent(DragAndDropCell.DropEventDescriptor desc)
 	{
-		if (desc.triggerType != DragAndDropCell.TriggerType.DropEventEnd)
+        Debug.Log("a");
+
+        if (desc.triggerType != DragAndDropCell.TriggerType.DropEventEnd)
 			return;
 
 		CardDisplay droppedCard = desc.item.GetComponent<CardDisplay> ();
@@ -24,8 +26,9 @@ public class CardDropCell : MonoBehaviour {
 			List<GameObject> handSlots = GameManager.instance.playerHand.handSlots;
 
 			Destroy (droppedCard.gameObject);
+            GameObject.Find("ErrorSound").GetComponent<AudioSource>().Play();
 
-			for (int i = 0; i < handSlots.Count; i++)
+            for (int i = 0; i < handSlots.Count; i++)
 			{
 				CardDisplay[] cardsInSlot = handSlots[i].GetComponentsInChildren<CardDisplay>();
 
