@@ -8,6 +8,7 @@ TagManager:
   - DialogueTriggerable
   - DeckSlot
   - HandSlot
+  - GroundNoise
   layers:
   - Default
   - TransparentFX
